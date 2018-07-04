@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_head(title, links)">
+    <title th:replace="${title}">Title</title>
+
+    <link rel="icon" th:href="@{/img/favico.png}">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/main.css}">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
+
+    <th:block th:replace="${links}"/>
+</head>
+</html>

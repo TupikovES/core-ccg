@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: common_head(~{::title}, ~{})">
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Home page</h1>
+        <footer>
+            <div th:replace="~{fragments/footer :: copy}"></div>
+        </footer>
+    </div>
+</body>
+</html>
