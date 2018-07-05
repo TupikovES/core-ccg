@@ -13,4 +13,14 @@ public class MainController {
         return "main";
     }
 
+    @RequestMapping(value = {"/export"}, method = RequestMethod.GET)
+    public String getExportPage() {
+        return "export";
+    }
+
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    public String getLoginPage() {
+        return "login";
+    }
+
 }

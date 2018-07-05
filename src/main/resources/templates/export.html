@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: common_head(~{::title}, ~{})">
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<header th:replace="fragments/head :: header">
+
+</header>
+<div class="container" id="ec-content">
+    <h1>Экспорт данных</h1>
+
+    <div>
+        <div class="md-form">
+            <input type="text" id="form1" class="form-control">
+            <label for="form1" >Example label</label>
+        </div>
+    </div>
+    <button id="getCtypes" type="button" class="btn btn-primary">get ctypes</button>
+    <p id="ec-result"></p>
+
+</div>
+<footer th:replace="~{fragments/footer :: copy}">
+</footer>
+<div th:replace="fragments/footer :: common_js(~{::script})">
+    <script th:src="@{/js/export.js}"></script>
+</div>
+</body>
+</html>

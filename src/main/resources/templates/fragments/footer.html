@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <div class="copy" th:fragment="copy">
-        &copy; 2018 <a href="mailto:evgeniy.tupikov@gmail.com?subject=По вопросу работы сайта">Evgeniy Tupikov</a>
+    <div th:fragment="common_js(script)">
+        <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/1.14.1/popper.min.js}"></script>
+        <script th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.5.3/js/bootstrap.min.js}"></script>
+        <script th:src="@{/webjars/mdbootstrap-bootstrap-material-design/4.5.3/js/mdb.min.js}"></script>
+        <script th:replace="${script}"></script>
     </div>
+    <footer id="ec-fixed-footer" th:fragment="copy" class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="mailto:evgeniy.tupikov@gmail.com?subject=По вопросу работы сайта">Evgeniy Tupikov</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 </body>
 </html>

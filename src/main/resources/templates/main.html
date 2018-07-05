@@ -5,11 +5,32 @@
     <title>Home page</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Home page</h1>
-        <footer>
-            <div th:replace="~{fragments/footer :: copy}"></div>
-        </footer>
+<header th:replace="fragments/head :: header">
+
+</header>
+<div class="container" id="ec-content">
+
+    <div class="text-center">
+
+        <h1 class="card-title h2-responsive mt-2"><strong>Экспорт для CMS</strong></h1>
+        <p class="blue-text mb-4 font-bold">Web сервис для выгрузки контента из CMS</p>
+
+        <div class="d-flex justify-content-center">
+            <p class="card-text mb-3" style="max-width: 43rem;">
+                Данный сервис позволяет выгружать данные из CMS через её API и экспортировать их в файлы CSV, MS Excel
+                др.
+                Так же позволяет формотировать файлы с данными (например CSV) одной CMS для конкретной структуры другой
+                CMS.
+            </p>
+        </div>
+
+        <hr class="my-4">
+
     </div>
+
+</div>
+<footer th:replace="~{fragments/footer :: copy}">
+</footer>
+<div th:replace="fragments/footer :: common_js(~{})"></div>
 </body>
 </html>

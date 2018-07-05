@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: common_head(~{::title}, ~{})">
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<header th:replace="fragments/head :: header">
+
+</header>
+<div class="container" id="ec-content">
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <div th:if="${param.error}">
+                Invalid username and password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+            <form name="f" method="post" th:action="@{/login}">
+                <!-- Material input email -->
+                <p class="h4 text-center mb-4">Sign in</p>
+
+                <!-- Material input email -->
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="text" id="materialFormLoginEmailEx" class="form-control" name="username">
+                    <label for="materialFormLoginEmailEx">Your email</label>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="materialFormLoginPasswordEx" class="form-control" name="password">
+                    <label for="materialFormLoginPasswordEx">Your password</label>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-default" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{fragments/footer :: copy}">
+</footer>
+<div th:replace="fragments/footer :: common_js(~{::script})">
+    <script th:src="@{/js/export.js}"></script>
+</div>
+</body>
+</html>
