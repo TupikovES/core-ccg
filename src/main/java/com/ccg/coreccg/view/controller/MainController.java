@@ -23,4 +23,10 @@ public class MainController {
         return "login";
     }
 
+    public String getContactPage() {
+        return "contacts";
+    }
+
+
+
 }

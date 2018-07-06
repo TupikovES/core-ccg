@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="common_head(title, links)">
     <title th:replace="${title}">Title</title>
 
@@ -19,7 +19,7 @@
 
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Ecms</a>
+            <a class="navbar-brand" th:href="@{/}">Ecms</a>
 
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -36,17 +36,19 @@
                         <a class="nav-link" th:href="@{/export}">Экспорт</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/contact}">Контакты</a>
+                        <a class="nav-link" th:href="@{/contacts}">Контакты</a>
                     </li>
 
                 </ul>
                 <!-- Links -->
 
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li sec:authorize="!isAnonymous()" class="nav-item">
                         <a class="nav-link waves-effect waves-light">
-                            <i class="fa fa-user"></i> Profile </a>
+                            <i class="fa fa-user"></i><span sec:authentication="name" ></span></a>
                     </li>
+                </ul>
+                <ul sec:authorize="isAuthenticated()" class="navbar-nav">
                     <li>
                         <form th:action="@{/logout}" method="post">
                             <button type="submit" class="btn btn-primary btn-md">Выход</button>

@@ -35,6 +35,8 @@ dependencies {
     compile('org.springframework.session:spring-session-core')
     compile('com.h2database:h2')
 
+    compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE'
+
     compile 'org.webjars:bootstrap:4.1.1'
     compile 'org.webjars:mdbootstrap-bootstrap-material-design:4.5.3'
     compile 'org.webjars:jquery:3.3.1'
